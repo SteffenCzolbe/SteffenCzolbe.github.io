@@ -1,11 +1,46 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+title: Teaching
+description:
 nav: true
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+#### Machine Learning, 2019
 
-Organize your courses by years, topics, or universities, however you like!
+Teaching Assistant, University of Copenhagen
+
+Graduate-level machine learning course. Intorducing the theoretical foundations of machine learning, and a large range of classical and modern algorithms.
+
+---
+
+#### Vision and Image Processing, 2020, 2021
+
+Assistant Lecturer, University of Copenhagen
+
+Graduate-level image processing course. Teaching classical image processing concepts and solving applied problems.
+
+---
+
+#### Numerical Optimization, 2021
+
+Assistant Lecturer, University of Copenhagen
+
+Graduate-level optimization course. Introducing numerical methods of optimizing functions, along with a lot of advanched linear algebra.
+
+---
+
+#### Discrete Mathematics, 2017
+
+Teaching Assistant, University of Applied Sciences, FH-Wedel
+
+Undergrad-level math course, introducing boolean logic, set theory, combinatorics, probability, number theory and mathematical proofs.
+
+---
+
+# Supervision
+
+I supervise Bachelor and Master Thesis
+
+- Paraskevas Pegios, Master Thesis
+- Michael Ayoub, Bachelor Thesis

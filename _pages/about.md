@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: <b>PhD-Fellow</b> @ <a href="https://www.ku.dk/english/">University of Copenhagen</a>
 
 profile:
   align: right
@@ -14,8 +14,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a PhD Fellow of Machine Learning with the Department of Computer science at the <a href="https://www.ku.dk/english/">University of Copenhagen</a>, co-advised by Aasa Feragen and Oswin Krause.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My PhD research focuses on developing deep learning methods for medical imaging, with a focus on image registration. In my work I dive into unsupervised & semi-supervised learning, with an emphasis on the registration of tricky, real-world anatomies and an ambition to develop general algorithms that apply to a multitude of problem domains and modalities. I also published on uncertainty quantification and topology detection.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Previously, I obtained a M.Sc. in computer Science from the University of Copenhagen. During my Masters I worked tgether with the LEGO group on teaching reinforcement learning with LEGO Mindstorms Robots, and designed a lightweight perceptual similarity metric for image generation and distance measuring, advised by Christian Igel.

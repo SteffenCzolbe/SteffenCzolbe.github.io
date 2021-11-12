@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 title: Steffen Czolbe # the website title (if blank, full name will be used instead)
-first_name: Steffen
+first_name: <b>Steffen</b>
 middle_name:
 last_name: Czolbe
 email: per.sc@di.ku.dk
@@ -77,7 +77,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: blog # your blog must have a name for it to show up in the nav bar
+blog_name: # your blog must have a name for it to show up in the nav bar
 blog_description: My Projects.
 permalink: /blog/:year/:title/
 
@@ -180,8 +180,8 @@ jekyll-archives:
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: Einstein
-  first_name: [Albert, A.]
+  last_name: Czolbe
+  first_name: [Steffen, S., Steffen*, S.*]
 
   style: apa
   locale: en

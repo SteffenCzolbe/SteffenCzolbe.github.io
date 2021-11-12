@@ -1,19 +1,20 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: A growing collection of your cool projects.
 nav: true
-display_categories: [work, fun]
+display_categories: [work, fun] # categories disabled in config
 horizontal: false
 ---
+
 <div class="projects">
   {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
     {% for category in page.display_categories %}
       <h2 class="category">{{ category }}</h2>
       {% assign categorized_projects = site.projects | where: "category", category %}
-      {% assign sorted_projects = categorized_projects | sort: "importance" %}
+      {% assign sorted_projects = categorized_projects | sort: "date" | reverse %}
       <!-- Generate cards for each project -->
       {% if page.horizontal %}
         <div class="container">
@@ -32,9 +33,11 @@ horizontal: false
       {% endif %}
     {% endfor %}
 
-  {% else %}
+{% else %}
+
   <!-- Display projects without categories -->
-    {% assign sorted_projects = site.projects | sort: "importance" %}
+
+    {% assign sorted_projects = site.projects | sort: "date" | reverse %}
     <!-- Generate cards for each project -->
     {% if page.horizontal %}
       <div class="container">
@@ -52,6 +55,6 @@ horizontal: false
       </div>
     {% endif %}
 
-  {% endif %}
+{% endif %}
 
 </div>

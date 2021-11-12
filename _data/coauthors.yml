@@ -1,18 +1,19 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"Krause":
+  - firstname: ["Oswin", "O."]
+    url: https://scholar.google.com/citations?user=5ER3NYoAAAAJ&hl=en
 
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Cox":
+  - firstname: ["Ingemar", "I."]
+    url: https://ingemarcox.cs.ucl.ac.uk/
 
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Feragen":
+  - firstname: ["Aasa", "A."]
+    url: https://scholar.google.com/citations?user=MNDVpoUAAAAJ&hl=en
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Igel":
+  - firstname: ["Christian", "C."]
+    url: https://scholar.google.dk/citations?user=d-jF4zIAAAAJ&hl=en
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Arnavaz":
+  - firstname: ["Kasra", "K.", "Kasra*", "K.*"]
+    url: https://www.linkedin.com/in/kasra-arnavaz/?originalSubdomain=dk

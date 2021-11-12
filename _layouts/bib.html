@@ -10,6 +10,9 @@
     <abbr class="badge">{{entry.abbr}}</abbr>
     {% endif %}
   {% endif %}
+  {% if entry.tag %}
+    <abbr class="badge">{{entry.tag}}</abbr>
+  {% endif %}
   </div>
 
   <div id="{{entry.key}}" class="col-sm-8">
@@ -66,6 +69,11 @@
           {% endif %}
         {% endfor %}
       </div>
+      {% if entry.additional %}
+      <div class="periodical">
+        {{entry.additional}}
+      </div>
+      {% endif %}
 
       <div class="periodical">
       {% if entry.type == "article" %}
@@ -83,8 +91,17 @@
     {% endif %}
 
     <div class="links">
+    {% if entry.project %}
+      <a href="{% link {{entry.project}} %}" class="btn btn-sm z-depth-0" role="button">Summary</a>
+    {% endif %}
+    {% if entry.talk %}
+      <a href="{{entry.talk}}" class="btn btn-sm z-depth-0" role="button">Talk</a>
+    {% endif %}
+    {% if entry.github %}
+    <a href="{{entry.github}}" class="btn btn-sm z-depth-0" role="button">Code</a>
+    {% endif %}
     {% if entry.abstract %}
-      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
     {% endif %}
     {% if entry.arxiv %}
       <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
