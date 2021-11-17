@@ -12,7 +12,7 @@
   Steffen Czolbe
 
 
-  | blog
+  | Image Registration
 
 </title>
 <meta name="description" content="Steffen Czolbe's Website
@@ -24,8 +24,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://steffenczolbe.github.io/blog/index.html" />
-<meta property="og:description" content="blog" />
+<meta property="og:url" content="https://steffenczolbe.github.io/projects/2019-10-image_registration_tool/" />
+<meta property="og:description" content="Image Registration" />
 <meta property="og:image" content="assets/img/prof_pic.jpg" />
 
 
@@ -46,7 +46,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⇄</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/2019-10-image_registration_tool/">
 
 
 <!-- Dark Mode -->
@@ -109,11 +109,9 @@
           
           
           
-          
-          
           <li class="nav-item ">
               
-                <a class="nav-link" href="https://www.linkedin.com/in/steffen-czolbe/">
+                <a class="nav-link" href="https://www.linkedin.com/in/steffen-czolbe/" target="_blank" rel="noopener noreferrer">
                   CV
                   
                 </a>
@@ -184,8 +182,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -204,119 +202,36 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My Projects.</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Image Registration</h1>
+    <h2 class="post-description">Play around with image alignment algorithms! The correct alignment of images is at the core of many applications in photography, video, and medical imaging.</h2>
+  </header>
+
+  <article>
+    <p>Image registration aligns two or more images of the same scene. A source image is placed into the coordinate system of a target image via geometric transformations. Image registration as a wide range of applications. For example, it is used in computer vision to stitch together multiple photographs to a panorama shot, or in medical imaging to align scans deformable body parts, such brain tissue in MRI scans.</p>
+
+<p>This tool lets you experiment with different image registration algorithms. Just draw a source and a target image, and hit the align button!</p>
+
+<blockquote>
+  <p>This tool lives on <a href="https://steffen-io.com/registration.html" target="_blank" rel="noopener noreferrer"> my old website</a> , as github pages does not allow me to do computationally heavy tasks (thanks crypto miners). Might break at any time.</p>
+</blockquote>
+
+<div class="row">
+    <a href="https://steffen-io.com/registration.html" target="_blank" rel="noopener noreferrer">
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
-  <ul class="post-list">
-    
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/image_registration_tool-800x658.png" srcset="    /assets/resized/image_registration_tool-480x395.png 480w,    /assets/resized/image_registration_tool-800x658.png 800w,/ assets/img/image_registration_tool.png 966w" title="screenshot of the image registration tool">
 
-    
-    
-    
-    
+    </div>
+     </a>
+</div>
+<div class="caption">
+    Check out the tool <a href="https://steffen-io.com/registration.html" target="_blank" rel="noopener noreferrer"> here </a> or by clicking the image.
+</div>
 
-    <li>
-      <h3><a class="post-title" href="/blog/2021/diagrams/">a post with diagrams</a>
-      </h3>
-      <p>an example of a blog post with diagrams</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        July 4, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a>
-      </h3>
-      <p>an example of a distill-style blog post and main elements</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        May 22, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a>
-      </h3>
-      <p>a quick run down on accessing github metadata.</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        September 28, 2020
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2020">
-          <i class="fas fa-calendar fa-sm"></i> 2020 </a>
-
-          
-
-          
-          &nbsp; &middot; &nbsp;
-            
-            <a href="/blog/category/sample-posts">
-              <i class="fas fa-tag fa-sm"></i> sample-posts</a> &nbsp;
-              
-            <a href="/blog/category/external-services">
-              <i class="fas fa-tag fa-sm"></i> external-services</a> &nbsp;
-              
-          
-    </p>
-    </li>
-
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+  </article>
 
 </div>
 
@@ -327,8 +242,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2021 <b>Steffen</b>  Czolbe.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    © Copyright 2021 <b>Steffen</b>  Czolbe.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
     
     

@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <meta http-equiv="refresh" content="3; url=https://steffenczolbe.github.io/" />
+    
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   Steffen Czolbe
 
 
-  | Page not found
+  | Is segmentation uncertainty useful?
 
 </title>
 <meta name="description" content="Steffen Czolbe's Website
@@ -24,8 +24,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://steffenczolbe.github.io/404.html" />
-<meta property="og:description" content="Page not found" />
+<meta property="og:url" content="https://steffenczolbe.github.io/projects/2021-06-ipmi2021_prob_segmentation/" />
+<meta property="og:description" content="Is segmentation uncertainty useful?" />
 <meta property="og:image" content="assets/img/prof_pic.jpg" />
 
 
@@ -46,7 +46,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⇄</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/404.html">
+<link rel="canonical" href="/projects/2021-06-ipmi2021_prob_segmentation/">
 
 
 <!-- Dark Mode -->
@@ -203,12 +203,116 @@
       <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Page not found</h1>
-    <h2 class="post-description">Looks like there has been a mistake. Nothing exists here.</h2>
+    <h1 class="post-title">Is segmentation uncertainty useful?</h1>
+    <h2 class="post-description">A critical view on multiple common probabilistic models.</h2>
   </header>
 
   <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://steffenczolbe.github.io/">here</a>.</p>
+    <div class="profile float-right">
+    
+
+
+<img class="img-fluid z-depth-1 rounded" src="/assets/resized/uncertainty_thumbnail-480x343.png" srcset="    /assets/resized/uncertainty_thumbnail-480x343.png 480w,/ assets/img/uncertainty_thumbnail.png 550w">
+
+    <div class="caption">
+        Probabilistic segmentation models allow us to sample from a distribution of segmentations!
+    </div>
+</div>
+
+<p>Probabilistic image segmentation models provide a distribution of likely segmentation masks. Various characteristics of the distribution can be used to assess the prediction confidence of the model. Find the paper <a href="https://arxiv.org/abs/2103.16265v1" target="_blank" rel="noopener noreferrer">here</a> and the code on <a href="https://github.com/SteffenCzolbe/probabilistic_segmentation" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+
+<h3 id="models">Models</h3>
+
+<p>We investigate four common models used to predict segmentation uncertainty:</p>
+
+<ul>
+  <li>A simple U-Net with a softmax-output layer.</li>
+  <li>An ensemble of U-Nets.</li>
+  <li>MC-Dropout, a method that approximates Bayesian weight distributions.</li>
+  <li>Probabilistic U-Net, a fusion between a VAE and a U-Net.</li>
+</ul>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/uncertainty_models-800x238.png" srcset="    /assets/resized/uncertainty_models-480x143.png 480w,    /assets/resized/uncertainty_models-800x238.png 800w,/ assets/img/uncertainty_models.png 1390w" title="Schematic overview of the evaluated models">
+
+    </div>
+</div>
+<div class="caption">
+    Schematic overview of the evaluated models. Blue: residual blocks. Orange: Dropout layers essential to the networks’ functionality.
+</div>
+
+<h3 id="results">Results</h3>
+
+<p>We evaluate the models on two datasets: (1) Skin leision segmentation and (2) Lung cancer segmentation. We see, that all models are relatively certain on correct predictions (TP + TN), and less certain on wrong predictions (FP + FN). Outliers are the MC-dropout model, which seems to be never completely certain in our case (possibly due to bad calibration), and TPs on the lung cancer dataset. The Lung cancer dataset has a large class imbalance, with very little cancer cells. This might explain my models are reluctant to be overly confident on detected cancer cells.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/uncertainty_results-800x331.png" srcset="    /assets/resized/uncertainty_results-480x198.png 480w,    /assets/resized/uncertainty_results-800x331.png 800w,/ assets/img/uncertainty_results.png 1357w" title="Schematic overview of the evaluated models">
+
+    </div>
+</div>
+<div class="caption">
+    All models are relatively certain on correct predictions (TP + TN), and less certain on wrong predictions (FP + FN).
+</div>
+
+<p>Separating model performance by whether different human annotators fully agree, somewhat agree, or completely disagree shows very little difference between models: All models are certain when the humans agree, and uncertain when humans disagree.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/uncertainty_results2-800x286.png" srcset="    /assets/resized/uncertainty_results2-480x172.png 480w,    /assets/resized/uncertainty_results2-800x286.png 800w,/ assets/img/uncertainty_results2.png 1355w" title="Schematic overview of the evaluated models">
+
+    </div>
+</div>
+<div class="caption">
+    Model agreement with expert annotators, and generalized energy distance of the model output distribution to tthe distribution sampled from four human annotators. The models look very similar here.
+</div>
+
+<h3 id="active-learning">Active learning</h3>
+
+<p>Finally, we try to use the uncertainty estimations: In an active learning setting, we try to develop a “smart” strategy on what samples to include into the dataset next. This can inform annotation strategies and lower annotation cost. We trial an uncertainty-sampling strategy against random sampling. In most cases, the model with the random strategy performs better.</p>
+
+<p>Investigating the samples selected by the uncertainty-based strategy reveals that the model frequently chose to include samples where even the group of expert annotators provided disagreeing segmentation masks, providing little information for the model to learn from.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/uncertainty_active_learning-800x326.png" srcset="    /assets/resized/uncertainty_active_learning-480x196.png 480w,    /assets/resized/uncertainty_active_learning-800x326.png 800w,/ assets/img/uncertainty_active_learning.png 1397w" title="Schematic overview of the evaluated models">
+
+    </div>
+</div>
+<div class="caption">
+    Learning curves for the four algorithms on both datasets, using uncertainty-based sampling and random-based sampling. The random strategy performs better.
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/uncertainty_active_learning_issue-800x185.png" srcset="    /assets/resized/uncertainty_active_learning_issue-480x111.png 480w,    /assets/resized/uncertainty_active_learning_issue-800x185.png 800w,/ assets/img/uncertainty_active_learning_issue.png 1260w" title="Schematic overview of the evaluated models">
+
+    </div>
+</div>
+<div class="caption">
+    An example of the ambiguous samples frequently selected for inclusion into the training set under the uncertainty-based data gathering strategy. This unseen sample was selected when 150 annotations were revealed. The group of expert annotators provided disagreeing segmentation masks, confirming the model uncertainty but providing little additional information to learn from.
+</div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Is segmentation uncertainty useful? We find that uncertainty,
+even in the simplest models, reliably gives practitioners an indication of areas of an image that might be ambiguous, or wrongly segmented. Using uncertainty estimates to reduce the annotation load has proven challenging, with no significant advantage over a random strategy.</p>
 
   </article>
 

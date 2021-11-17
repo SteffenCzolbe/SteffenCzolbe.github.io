@@ -12,7 +12,7 @@
   Steffen Czolbe
 
 
-  | blog
+  | Semantic Similarity
 
 </title>
 <meta name="description" content="Steffen Czolbe's Website
@@ -24,8 +24,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://steffenczolbe.github.io/blog/index.html" />
-<meta property="og:description" content="blog" />
+<meta property="og:url" content="https://steffenczolbe.github.io/projects/2021-07-midl2021_deepsim/" />
+<meta property="og:description" content="Semantic Similarity" />
 <meta property="og:image" content="assets/img/prof_pic.jpg" />
 
 
@@ -46,7 +46,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⇄</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/2021-07-midl2021_deepsim/">
 
 
 <!-- Dark Mode -->
@@ -109,11 +109,9 @@
           
           
           
-          
-          
           <li class="nav-item ">
               
-                <a class="nav-link" href="https://www.linkedin.com/in/steffen-czolbe/">
+                <a class="nav-link" href="https://www.linkedin.com/in/steffen-czolbe/" target="_blank" rel="noopener noreferrer">
                   CV
                   
                 </a>
@@ -184,8 +182,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -204,119 +202,35 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My Projects.</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Semantic Similarity</h1>
+    <h2 class="post-description">Runner up for the best paper award at MIDL 2021</h2>
+  </header>
 
+  <article>
+    <p>What do we want to align? Image registration tries to align components of images. This is typically frames as an optimization problem, where we find the optimal transformation \(\Phi^*\) for an image pair \(\mathbf{I}, \mathbf{J}\) as</p>
 
-  <ul class="post-list">
-    
+\[\Phi^* = min_{\Phi} D(\mathbf{I} \circ \Phi, \mathbf{J}) + R(\Phi) ,\]
 
-    
-    
-    
-    
+<p>where \(R\) is a regularizer on the transformation, and \(D\) a similarity measure between the images.</p>
 
-    <li>
-      <h3><a class="post-title" href="/blog/2021/diagrams/">a post with diagrams</a>
-      </h3>
-      <p>an example of a blog post with diagrams</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        July 4, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
+<p>Existing similarity metrics can be grouped into three categories:</p>
 
-          
+<ul>
+  <li>Keypoint-Based metrics, such as the target registration error. These metrics try to aligign prior-placed landmark correspondences, but are impractical in many applications as the manual annotation and matching of landmarks in time-consuming.</li>
+  <li>Intensity-Based metrics, such as the mean squared error (MSE). These metrics aim to align the color-vlues of the pixels.</li>
+  <li>Correlation based metrics, such as normalized cros correlation (NCC). These try to maximize local correlations in the images, buy in practice also merely align pixel intensities.</li>
+</ul>
 
-          
-    </p>
-    </li>
+<blockquote>
+  <p>The underlying assumption of intensity- and correlation-based metrics is that as long as the pixel intensities of both images are close to each other, the images are well aligned. We challenge this assumption. Image registration should align areas of similar semantic content. Pixel intensities are not always a good description of the semantic meaning of areas of the images.</p>
+</blockquote>
 
-    
+<p>We design a method based on deep feature representation of a dataset, and achieve higher registration accuracy and smoother transformation fields compared to intensity- and correlation -based metrics. See the whole method in the <a href="https://www.youtube.com/watch?v=Hs9X3wSO774&amp;ab_channel=Steffen" target="_blank" rel="noopener noreferrer">video</a>, and take a look at the code on <a href="https://github.com/SteffenCzolbe/DeepSimRegistration" target="_blank" rel="noopener noreferrer">Github</a>.</p>
 
-    
-    
-    
-    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Hs9X3wSO774" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-    <li>
-      <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a>
-      </h3>
-      <p>an example of a distill-style blog post and main elements</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        May 22, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a>
-      </h3>
-      <p>a quick run down on accessing github metadata.</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        September 28, 2020
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2020">
-          <i class="fas fa-calendar fa-sm"></i> 2020 </a>
-
-          
-
-          
-          &nbsp; &middot; &nbsp;
-            
-            <a href="/blog/category/sample-posts">
-              <i class="fas fa-tag fa-sm"></i> sample-posts</a> &nbsp;
-              
-            <a href="/blog/category/external-services">
-              <i class="fas fa-tag fa-sm"></i> external-services</a> &nbsp;
-              
-          
-    </p>
-    </li>
-
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+  </article>
 
 </div>
 
@@ -327,8 +241,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2021 <b>Steffen</b>  Czolbe.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    © Copyright 2021 <b>Steffen</b>  Czolbe.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
     
     

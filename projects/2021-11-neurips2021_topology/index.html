@@ -12,7 +12,7 @@
   Steffen Czolbe
 
 
-  | blog
+  | Spot the difference
 
 </title>
 <meta name="description" content="Steffen Czolbe's Website
@@ -24,8 +24,8 @@
 " />
 <meta property="og:type" content="object" />
 <meta property="og:title" content="" />
-<meta property="og:url" content="https://steffenczolbe.github.io/blog/index.html" />
-<meta property="og:description" content="blog" />
+<meta property="og:url" content="https://steffenczolbe.github.io/projects/2021-11-neurips2021_topology/" />
+<meta property="og:description" content="Spot the difference" />
 <meta property="og:image" content="assets/img/prof_pic.jpg" />
 
 
@@ -46,7 +46,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⇄</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/2021-11-neurips2021_topology/">
 
 
 <!-- Dark Mode -->
@@ -109,11 +109,9 @@
           
           
           
-          
-          
           <li class="nav-item ">
               
-                <a class="nav-link" href="https://www.linkedin.com/in/steffen-czolbe/">
+                <a class="nav-link" href="https://www.linkedin.com/in/steffen-czolbe/" target="_blank" rel="noopener noreferrer">
                   CV
                   
                 </a>
@@ -184,8 +182,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -204,119 +202,86 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>My Projects.</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Spot the difference</h1>
+    <h2 class="post-description">Can we detect when geometric alignment algorithms go crazy?</h2>
+  </header>
+
+  <article>
+    <p>At NeurIPS 2021, we introduce the first unsupervised, learning based method for detecting changes in image topology. In additioan, we introduce the first dataset of manually annotated changes in topology, which allows us to significantly extend on the evaluation strategies employed in of previous work.</p>
+
+<h3 id="the-problem">The Problem</h3>
+
+<p>Alignment of distributions or images often assumes a common topology across the images, with undefined behaviour if this assumption is violated. Yet in practice, we are often especially interested in these cases where image topology is different or abnormal. For example in medical imaging, the patient we are inspecting is likely in treatment because their anatomy does not follow a ‘standard’, but is abnormal in some way - e.g. by a brain tumor.</p>
+
+<p>Alignment and registration methods that can handle differing topologies exist, but require the prior annotation of the changes in topology - we aim to provide an unsupervised method to detect the changes in topology.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
-  <ul class="post-list">
-    
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/topology_detection-800x286.png" srcset="    /assets/resized/topology_detection-480x172.png 480w,    /assets/resized/topology_detection-800x286.png 800w,/ assets/img/topology_detection.png 1034w" title="Two neighboring image slices show a change in the topology of the cell. Our unsupervised method can detect the change.">
 
-    
-    
-    
-    
+    </div>
+</div>
+<div class="caption">
+    Left+Center: Topological change between two neighboring image slices show a change in the topology of the cell. Right: Our unsupervised method can detect the change.
+</div>
 
-    <li>
-      <h3><a class="post-title" href="/blog/2021/diagrams/">a post with diagrams</a>
-      </h3>
-      <p>an example of a blog post with diagrams</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        July 4, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
+<h3 id="solution">Solution</h3>
 
-          
+<p>We base our method on probabilistic registration models, using a VAE to give pixel-wise bounds on the likelihood of a diffeomorphic match. We extend prior work by re-defining the output distribution and eliminating hyperparameters in the prior. For validation, we introduce the first dataset with annotated topological changes to aid evaluation in this field, which has been relying on qualitative assessment of small sample sizes and proxy-tasks before.</p>
 
-          
-    </p>
-    </li>
+<h3 id="results">Results</h3>
 
-    
+<p>The new method outperforms baselines from topological change detection and anomaly detection by a large margin, and competes with supervised models on one of the datasets.</p>
 
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a>
-      </h3>
-      <p>an example of a distill-style blog post and main elements</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        May 22, 2021
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2021">
-          <i class="fas fa-calendar fa-sm"></i> 2021 </a>
-
-          
-
-          
-    </p>
-    </li>
-
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a>
-      </h3>
-      <p>a quick run down on accessing github metadata.</p>
-      <p class="post-meta"> 2 min read &nbsp; &middot; &nbsp;
-        September 28, 2020
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2020">
-          <i class="fas fa-calendar fa-sm"></i> 2020 </a>
-
-          
-
-          
-          &nbsp; &middot; &nbsp;
-            
-            <a href="/blog/category/sample-posts">
-              <i class="fas fa-tag fa-sm"></i> sample-posts</a> &nbsp;
-              
-            <a href="/blog/category/external-services">
-              <i class="fas fa-tag fa-sm"></i> external-services</a> &nbsp;
-              
-          
-    </p>
-    </li>
-
-    
-  </ul>
-
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
 
 
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/topology-cells-800x501.png" srcset="    /assets/resized/topology-cells-480x301.png 480w,    /assets/resized/topology-cells-800x501.png 800w,/ assets/img/topology-cells.png 988w" title="img">
+
+    </div>
+</div>
+<div class="caption">
+    Topological differences detected by our method, cell dataset. Neighboring slices $$\mathbf{I}, \mathbf{J}$$ in rows 1 and 2. Heatmaps of the likelihood of topological differences detected with $$L_\text{sym}$$ in row 3. Heatmaps are overlayed on image $$\mathbf{J}$$ to ease comparison. Annotated topological differences used for evaluation outlined in red. Note that only a subset of topological anomalies present is annotated in our dataset.
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/topology-brains-480x507.png" srcset="    /assets/resized/topology-brains-480x507.png 480w,/ assets/img/topology-brains.png 697w" title="img">
+
+    </div>
+</div>
+<div class="caption">
+    Topological differences detected by our method, brain dataset. Structurally normal brain $$\mathbf{I}$$ in column 1, brain with tumor $$\mathbf{J}$$ in column 2. Heatmaps of the likelihood of topological differences detected with $$L_\text{sym}$$ in columns 3, 4 . Likelihood of topological differences caused by the structural anomaly in columns 5, 6. Contour of the ground truth brain tumor in red. Heatmaps are overlayed on image J to ease comparison.
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+
+<img class="img-fluid rounded z-depth-1" src="/assets/resized/topology-auc-800x233.png" srcset="    /assets/resized/topology-auc-480x140.png 480w,    /assets/resized/topology-auc-800x233.png 800w,/ assets/img/topology-auc.png 1001w" title="img">
+
+    </div>
+</div>
+<div class="caption">
+   Receiver operating characteristic curves (ROC) and area under the curve (AUC) for detecting topological changes on the cell and brain datasets. We test models of our method for unsupervised topological change detection, trained with a semantic loss function and the MSE in the reconstruction term, and compare against unsupervised baselines from image registration (Li and Wyatt, Jacobian Determinant) and unsupervised anomaly detection (An and Cho). For reference, we also include a supervised segmentation model, which has been trained on the ground truth annotations.
+</div>
+<p>Code available on <a href="https://github.com/SteffenCzolbe/TopologicalChangeDetection" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+
+<h3 id="video">Video</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MQ4GvM0up5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+  </article>
 
 </div>
 
@@ -327,8 +292,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2021 <b>Steffen</b>  Czolbe.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    © Copyright 2021 <b>Steffen</b>  Czolbe.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
     
     
